@@ -30,10 +30,11 @@ function App() {
   return (
    
     <Router>
-      <Navbar mode={mode} toggleMode={toggleMode}/>/
-        <TextForm mode={mode}/>
+      <Navbar mode={mode} toggleMode={toggleMode}/>
+       
       <Routes>
 
+        <Route path="/" element={<TextForm mode={mode}/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/login" element={<Login/>}/>
       </Routes>  

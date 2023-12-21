@@ -47,7 +47,6 @@ let changeColor = props.mode==="light" ?'black':"white";
   };
 
   let numOfWords = (text.split(" ").pop() ===""?text.split(" ").length-1 :text.split(' ').length);
-  
 
   return (
     <>
@@ -86,10 +85,11 @@ let changeColor = props.mode==="light" ?'black':"white";
         <div className="container my-4">
           <h2>Your Text Summary</h2>
           <p>
-             
-            {numOfWords} words and {text.length} characters
+             {text.split(" ").filter((element)=>{
+              return element.length!==0}).length} words and {text.length} characters
+            {/* {numOfWords} words and {text.length} characters   */} 
+            {/* In upper method has a flow that it not count only 1 space and then it counts spaces */}
 
-            {/* {text===" " || text.split(" ").pop() ==="" ? text.split(" ").length-1 :text.split(' ').length} words and {text.length} characters */}
           </p>
           <h2 className="my-2">Preview</h2>
           <p>{(text.length>0)?text :"Enter text to Preview"}</p>
